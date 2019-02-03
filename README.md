@@ -1,34 +1,44 @@
 # vue-flt
 
+:construction: Work in progress :construction:
+
+Lightweight flat components for Vue.js, inspired by Buefy and Vuetify.
+
+All components can be found under `/src/components`.
+
+Current list of components
+
+| Name         | Description    | Props                                                                   |
+| ------------ | -------------- | ----------------------------------------------------------------------- |
+| FltInput     | An input field | id: String<br>backgroundColor: String<br>color: String<br>label: String |
+| FltTextField | A text field   | backgroundColor: String<br>color: String<br>label: String               |
+
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### How to use components in development
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Components may be imported individually like so:
+
+`import { FltInput, FltTextField } from "./components/index.js";`
