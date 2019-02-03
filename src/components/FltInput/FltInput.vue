@@ -74,6 +74,7 @@ export default {
   align-items: center;
   flex: 1 1 auto;
   text-align: left;
+  padding: 8px;
 }
 
 .flt-input {

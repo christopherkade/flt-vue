@@ -9,7 +9,15 @@ export default {
       type: String,
       default: "rgb(74, 74, 74)"
     },
-    label: String
+    label: String,
+    rows: {
+      type: Number,
+      default: 4
+    },
+    cols: {
+      type: Number,
+      default: 50
+    }
   },
   computed: {
     textFieldClasses() {
@@ -44,6 +52,10 @@ export default {
         style: {
           backgroundColor: this.backgroundColor,
           color: this.color
+        },
+        attrs: {
+          rows: this.rows,
+          cols: this.cols
         }
       });
     }
@@ -67,6 +79,7 @@ export default {
   align-items: center;
   flex: 1 1 auto;
   text-align: left;
+  padding: 8px;
 }
 
 .flt-text-field {
@@ -76,6 +89,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.25);
   transition: background-color 0.3s ease;
   font-size: 1em;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
 
 .flt-text-field:focus {

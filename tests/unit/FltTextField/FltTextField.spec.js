@@ -14,8 +14,7 @@ describe("[UNIT] FltInput", () => {
         backgroundColor: "red",
       },
     });
-
-    expect(wrapper.props("backgroundColor")).toBe("red");
+    expect(wrapper.vm.backgroundColor).toBe("red");
   });
 
   it("displays the correct label", () => {
@@ -33,7 +32,26 @@ describe("[UNIT] FltInput", () => {
         color: "blue",
       },
     });
+    expect(wrapper.vm.color).toBe("blue");
+  });
 
-    expect(wrapper.props("color")).toBe("blue");
+  it("displays the correct amount of rows", () => {
+    const wrapper = shallowMount(FltTextField, {
+      propsData: {
+        rows: 50,
+      },
+    });
+
+    expect(wrapper.vm.rows).toBe(50);
+  });
+
+  it("displays the correct amount of cols", () => {
+    const wrapper = shallowMount(FltTextField, {
+      propsData: {
+        cols: 100,
+      },
+    });
+
+    expect(wrapper.vm.cols).toBe(100);
   });
 });
