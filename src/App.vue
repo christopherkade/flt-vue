@@ -2,17 +2,25 @@
   <div id="app">
     <flt-input label="Name"/>
     <flt-text-field label="Description"/>
+    <flt-button @click="buttonClicked()">Button</flt-button>
+    <flt-button disabled>Disabled button</flt-button>
   </div>
 </template>
 
 <script>
-import { FltInput, FltTextField } from "./components/index.js";
+import { FltInput, FltTextField, FltButton } from "./components/index.js";
 
 export default {
   name: "app",
   components: {
     FltInput,
-    FltTextField
+    FltTextField,
+    FltButton
+  },
+  methods: {
+    buttonClicked() {
+      console.log("Button has been clicked");
+    }
   }
 };
 </script>

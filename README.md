@@ -8,10 +8,11 @@ All components can be found under `/src/components`.
 
 Current list of components
 
-| Name         | Description    | Props                                                                                     |
-| ------------ | -------------- | ----------------------------------------------------------------------------------------- |
-| FltInput     | An input field | id: String<br>backgroundColor: String<br>color: String<br>label: String                   |
-| FltTextField | A text field   | backgroundColor: String<br>color: String<br>label: String<br>rows: Number<br>cols: Number |
+| Name         | Description | Props                                                                                     |
+| ------------ | ----------- | ----------------------------------------------------------------------------------------- |
+| FltInput     | Input field | id: String<br>backgroundColor: String<br>color: String<br>label: String                   |
+| FltTextField | Text field  | backgroundColor: String<br>color: String<br>label: String<br>rows: Number<br>cols: Number |
+| FltButton    | Button      | backgroundColor: String<br>color: String<br>disabled: Boolean                             |
 
 ## Project setup
 

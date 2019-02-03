@@ -1,8 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
 import FltTextField from "@/components/FltTextField/FltTextField.vue";
 
-describe("[UNIT] FltInput", () => {
-  it("renders components correctly", () => {
+describe("[UNIT] FltTextField", () => {
+  it("renders component correctly", () => {
     const wrapper = shallowMount(FltTextField);
 
     expect(wrapper.is(FltTextField)).toBe(true);

@@ -2,7 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import FltInput from "@/components/FltInput/FltInput.vue";
 
 describe("[UNIT] FltInput", () => {
-  it("renders components correctly", () => {
+  it("renders component correctly", () => {
     const wrapper = shallowMount(FltInput);
 
     expect(wrapper.is(FltInput)).toBe(true);
