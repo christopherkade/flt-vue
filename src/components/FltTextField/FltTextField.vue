@@ -1,4 +1,6 @@
 <script>
+import FltLabel from "@/components/FltLabel/FltLabel.vue";
+
 export default {
   name: "flt-text-field",
   props: {
@@ -35,16 +37,7 @@ export default {
     generateLabel() {
       if (!this.label) return null;
 
-      return this.$createElement(
-        "label",
-        {
-          staticClass: "flt-label",
-          style: {
-            color: "rgba(0, 0, 0, 0.3)"
-          }
-        },
-        this.label
-      );
+      return this.$createElement(FltLabel, this.label);
     },
     generateTextField() {
       return this.$createElement("textarea", {
@@ -75,25 +68,26 @@ export default {
 
 <style lang="scss" scoped>
 .flt-text-field-wrapper {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-  text-align: left;
   padding: 8px;
+  display: inline-block;
 }
 
 .flt-text-field {
   padding: 12px;
   border-radius: 4px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease;
+  border-style: none;
+  background-color: transparent;
   font-size: 1em;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
+  vertical-align: middle;
+  box-shadow: 0px 2px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .flt-text-field:focus {
-  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    inset 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    inset 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .flt-label {

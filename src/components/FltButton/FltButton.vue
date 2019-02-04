@@ -14,24 +14,13 @@ export default {
       default: false
     }
   },
-  computed: {
-    buttonClasses() {
-      return {};
-    }
-  },
   methods: {
     /**
      * Called when the button has been clicked, emits a click event
      */
-    clickHandler(e) {
+    clickHandler() {
       if (this.disabled) return;
       this.$emit("click");
-    },
-    /**
-     * Generates content of the button
-     */
-    generateContent() {
-      return [this.generateButton()];
     },
     generateButton() {
       return this.$createElement(
@@ -53,44 +42,37 @@ export default {
       );
     }
   },
-  render(createElement) {
-    return createElement(
-      "div",
-      {
-        staticClass: "flt-button-wrapper",
-        class: this.buttonClasses
-      },
-      this.generateContent()
-    );
+  render() {
+    return this.generateButton();
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.flt-button-wrapper {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-  text-align: left;
-  padding: 8px;
-}
-
 .flt-button {
   padding: 12px;
+  margin: 4px;
   border-radius: 4px;
-  border: none;
+  border-style: none;
   background-color: rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease;
+  transition: opacity 0.2s ease;
   font-size: 1em;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .flt-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
   cursor: pointer;
 }
 
 .flt-button[disabled] {
   pointer-events: none;
   opacity: 0.5;
+}
+
+/* Removes dotted outline on Firefox */
+.flt-button::-moz-focus-inner {
+  border: 0;
 }
 </style>
